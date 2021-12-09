@@ -11,85 +11,141 @@ Estaríamos hablando de los movimientos 101 y 102. El problema que supongo vamos
 
 Pasos
 1. IngresosEgresosTMP = Importar tablas MKPF - MSEG - EKPO - EKKO - MARA - LFA1
-    <t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs>
-    <wc>
-    <w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w>
-    <w><f>VGART</f><o>0</o><l>WE</l><h></h></w>
-    </wc></t>
+   # MKPF AS T00001:Cabecera de doc.artículo
+    Campos:
+        MBLNR MJAHR VGART BLDAT BUDAT CPUDT USNAM XBLNR LE_VBELN
+    Filtros:
+        CPUDT BETWEEN %v_Desde% %v_Hasta%
+        VGART = WE
 
-    <t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs>
-    <wc>
-    <w><f>BWART</f><o>0</o><l>101</l><h></h></w>
-    <w><f>BWART</f><o>0</o><l>102</l><h></h></w>
-    <w><f>WERKS</f><o>7</o><l>M*</l><h></h></w>
-    </wc></t>
-
-    <t><n>EKPO</n><a>T00004</a><td>Posición del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>EBELP</f><f>MATNR</f><f>TXZ01</f><f>WERKS</f><f>MENGE</f><f>MTART</f></fs><wc></wc></t>
-
-    <t><n>EKKO</n><a>T00005</a><td>Cabecera del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>BUKRS</f><f>BSTYP</f><f>BSART</f><f>AEDAT</f><f>LIFNR</f></fs><wc></wc></t>
-
-    <t><n>MARA</n><a>T00007</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>BRAND_ID</f><f>MATKL</f><f>VOLUM</f></fs><wc></wc></t>
+   # MSEG AS T00002:Segmento doc.material
+    Campos:
+        MBLNR MJAHR ZEILE LINE_ID BWART MATNR WERKS LGORT LIFNR DMBTR MENGE EBELN EBELP GJAHR BUKRS BSTMG
+    Filtros:
+        BWART IN (101,102)
+        WERKS LIKE M*
     
-    <t><n>LFA1</n><a>T00011</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t>
+   # EKPO AS T00004:Posición del documento de compras
+    Campos:
+        EBELN EBELP MATNR TXZ01 WERKS MENGE MTART
+
+   # EKKO AS T00005:Cabecera del documento de compras
+    Campos:
+        EBELN BUKRS BSTYP BSART AEDAT LIFNR
+
+   # MARA AS T00007:Datos generales artículo
+    Campos:
+    MATNR MTART BRAND_ID MATKL VOLUM
     
-    <jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc>
-    <jc><pt><pa>T00002</pa><pf>EBELN</pf></pt><ct><ca>T00004</ca><cf>EBELN</cf></ct></jc>
-    <jc><pt><pa>T00002</pa><pf>EBELP</pf></pt><ct><ca>T00004</ca><cf>EBELP</cf></ct></jc>
-    <jc><pt><pa>T00004</pa><pf>EBELN</pf></pt><ct><ca>T00005</ca><cf>EBELN</cf></ct></jc>
-    <jc><pt><pa>T00004</pa><pf>MATNR</pf></pt><ct><ca>T00007</ca><cf>MATNR</cf></ct></jc>
-    <jc><pt><pa>T00005</pa><pf>LIFNR</pf></pt><ct><ca>T00011</ca><cf>LIFNR</cf></ct></jc>
+   # LFA1 AS T00011:Maestro de proveedores (parte general)
+    Campos:
+        LIFNR NAME1
+    
+    Uniones:
+        T00001.MBLNR=T00002.MBLNR
+        T00001.MJAHR=T00002.MJAHR
+        T00002.EBELN=T00004.EBELN
+        T00002.EBELP=T00004.EBELP
+        T00004.EBELN=T00005.EBELN
+        T00004.MATNR=T00007.MATNR
+        T00005.LIFNR=T00011.LIFNR
 
 2. GruposArticulo = Importar tablas KLAH - SWOR
-    <t><n>KLAH</n><a>T00001</a><td>Datos cabecera clase</td><tt>1</tt><fs><f>CLINT</f><f>KLART</f><f>CLASS</f><f>STATU</f></fs><wc><w><f>BISDT</f><o>0</o><l>99991231</l><h></h></w><w><f>KLART</f><o>0</o><l>026</l><h></h></w></wc></t>
+   # KLAH AS T00001:Datos cabecera clase
+    Campos:
+        CLINT KLART CLASS STATU
+    Filtros:
+        BISDT = 99991231
+        KLART= 026
     
-    <t><n>SWOR</n><a>T00002</a><td>Sistema de clasificación: palabras clave</td><tt>1</tt><fs><f>CLINT</f><f>KSCHL</f><f>KSCHG</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t>
-    <jc><pt><pa>T00001</pa><pf>CLINT</pf></pt><ct><ca>T00002</ca><cf>CLINT</cf></ct></jc>
+   # SWOR AS T00002:Sistema de clasificación: palabras clave
+    Campos:
+        CLINT KSCHL KSCHG
+    Filtros:
+        SPRAS = S
+    
+    Uniones:
+        T00001.CLINT=T00002.CLINT
 
 3. Marcas = Importar tabla WRF_BRANDS_T
-    <t><n>WRF_BRANDS_T</n><a>T00001</a><td>Nombres de marcas</td><tt>1</tt><fs><f>BRAND_ID</f><f>BRAND_DESCR</f></fs><wc><w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w></wc></t>
+   # WRF_BRANDS_T AS T00001:Nombres de marcas
+    Campos:
+        BRAND_ID BRAND_DESCR
+    Filtros:
+        LANGUAGE = S
 
-4. CostoTMP = Importar tablas A073 - KONP
-    <t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f></fs>
-    <w><f>KAPPL</f><o>0</o><l>V</l><h></h></w>
-    <w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w>
-    <w><f>VKORG</f><o>0</o><l>1000</l><h></h></w>
-    <w><f>VTWEG</f><o>0</o><l>20</l><h></h></w>
-    <w><f>DATBI</f><o>5</o><l>%v_Desde%</l><h></h></w>
-    </t>
-
-    <t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t>
+4. CostoTMP = Importar tablas A073 - KONP - MARA
+   # A073 AS T00001:Artículo por OrgVta/CanDistr
+    Campos:
+        MATNR KNUMH DATAB DATBI
+    Filtros:
+        KAPPL= V
+        KSCHL= ZKP0
+        VKORG= 1000
+        VTWEG= 20
+        DATBI >= %v_Desde%
     
-    <jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc>
+   # KONP AS T00002:Condiciones (Posición)
+    Campos:
+        KBETR
+   # MARA AS T00003: Datos generales artículo
+    Campos 
+        
+    Filtros:
+        MTART IN (ZPRO, MTART, ZBLA, ZPVV)
 
-5.  VentaTMP = Importar tablas A073 - KONP     
-    <t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f></fs>
-    <w><f>KAPPL</f><o>0</o><l>V</l><h></h></w>
-    <w><f>KSCHL</f><o>0</o><l>VKP0</l><h></h></w>
-    <w><f>VKORG</f><o>0</o><l>1000</l><h></h></w>
-    <w><f>VTWEG</f><o>0</o><l>20</l><h></h></w>
-    <w><f>DATBI</f><o>5</o><l>%v_Desde%</l><h></h></w>
-    </t>
+    Uniones:
+        T00001.KAPPL=T00002.KAPPL
+        T00001.KSCHL=T00002.KSCHL
+        T00001.KNUMH=T00002.KNUMH
+        T00001.MATNR=T00003.MATNR
 
-    <t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t>
+5.  VentaTMP = Importar tablas A073 - KONP - MARA     
+    # A073 AS T00001:Artículo por OrgVta/CanDistr
+    Campos:
+        MATNR KNUMH DATAB DATBI
+    Filtros:
+        KAPPL=V
+        KSCHL=VKP0
+        VKORG=1000
+        VTWEG=20
+        DATBI >= %v_Desde%
     
-    <jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc>    
+    # KONP AS T00002:Condiciones (Posición)
+    Campos:
+        KBETR
+   # MARA AS T00003: Datos generales artículo
+    Campos 
+        
+    Filtros:
+        MTART IN (ZPRO, MTART, ZBLA, ZPVV)
+
+    Uniones:
+        T00001.KAPPL=T00002.KAPPL
+        T00001.KSCHL=T00002.KSCHL
+        T00001.KNUMH=T00002.KNUMH
+        T00001.MATNR=T00003.MATNR
 
 6.  ProveedorRegular = Importar tablas EINA - MARA - LFA1
-    <t><n>EINA</n><a>T00001</a><td>Registro info de compras: Datos generales</td><tt>1</tt><fs><f>INFNR</f><f>MATNR</f><f>LIFNR</f><f>RELIF</f></fs>
-    <w><f>RELIF</f><o>0</o><l>X</l><h></h></w></wc></t>
+    # EINA AS T00001:Registro info de compras: Datos generales
+    Campos:
+        INFNR MATNR LIFNR RELIF
+    Filtros:
+        RELIF=X
 
-    <t><n>MARA</n><a>T00002</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f></fs>
-    <w><f>MTART</f><o>0</o><l>ZPRO</l><h></h></w>
-    <w><f>MTART</f><o>0</o><l>ZBLA</l><h></h></w>
-    <w><f>MTART</f><o>0</o><l>ZPVV</l><h></h></w></wc></t>
+    # MARA AS T00002:Datos generales artículo
+    Campos::
+        MATNR MTART
+    Filtros:        
+        MTART=ZPRO
+        MTART=ZBLA
+        MTART=ZPVV
 
-    <t><n>LFA1</n><a>T00003</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts>
-    
-    <jc><pt><pa>T00001</pa><pf>MATNR</pf></pt><ct><ca>T00002</ca><cf>MATNR</cf></ct></jc>
-    <jc><pt><pa>T00001</pa><pf>LIFNR</pf></pt><ct><ca>T00003</ca><cf>LIFNR</cf></ct></jc>
+    # LFA1 AS T00003:Maestro de proveedores (parte general)
+    Campos:
+        LIFNR NAME1
+
+    Uniones:   
+        T00001.MATNR=T00002.MATNR
+        T00001.LIFNR=T00003.LIFNR
 
