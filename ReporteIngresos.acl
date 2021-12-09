@@ -1,5 +1,30 @@
-@ACL1300
-^LAYOUT   Datos                                                               1378 D,T.
+@ACL1500
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+^LAYOUT   ProveedorRegular                                                    108 D,T.
+EINA_INFNR     ASCII       1  10   AS "Registro info de compras: Datos generales;Número del registro info de compras"  
+EINA_MATNR     ASCII      11  18   AS "Registro info de compras: Datos generales;Número de artículo"  
+EINA_LIFNR     ASCII      29  10   AS "Registro info de compras: Datos generales;Número de cuenta del proveedor"  
+EINA_RELIF     ASCII      39   1   AS "Registro info de compras: Datos generales;Proveedor regular"  
+MARA_MATNR     ASCII      40  18   AS "Datos generales artículo;Número de artículo"  
+MARA_MTART     ASCII      58   4   AS "Datos generales artículo;Tipo de artículo"  
+LFA1_LIFNR     ASCII      62  10   AS "Maestro de proveedores (parte general);Número de cuenta del proveedor o acreedor"  
+LFA1_NAME1     ASCII      72  35   AS "Maestro de proveedores (parte general);Nombre 1"  
+^LAYOUT   Datos                                                               868 D,T.
 Usu_Legacy     ASCII       1  50    
 Cl_Legacy      ASCII      52  50    
 Usu_SAP        ASCII     103  50    
@@ -17,148 +42,98 @@ musimundo      ASCII     664  50
 clientes_unificado ASCII     715  50    
 interfaz_sap   ASCII     766  50    
 reposar        ASCII     817  50    
-subdiarios     ASCII     868  50    
-confinaweb     ASCII     919  50    
-adaptadores    ASCII     970  50    
-buzon_04       ASCII    1021  50    
-Usu_Rumbo      ASCII    1072  50    
-Cl_Rumbo       ASCII    1123  50    
-bancos         ASCII    1174  50    
-clientes_nuevo ASCII    1225  50    
-Usu_VTOL       ASCII    1276  50    
-Cl_VTOL        ASCII    1327  50    
-^FORMAT   Datos                                                               Datos                                                             "" "c:\acl\data\repository\datafiles\74bca8ed-6432-4192-ba0f-ed667d007440" 0
+^LAYOUT   IngresosEgresosTMP                                                  448 D,T.
+MKPF_MBLNR     ASCII       1  10   AS "Cabecera de doc.artículo;Número de documento artículo"  
+MKPF_MJAHR     ASCII      11   4   AS "Cabecera de doc.artículo;Ejercicio del documento de artículo"  
+MKPF_VGART     ASCII      15   2   AS "Cabecera de doc.artículo;Clase de operación"  
+MKPF_BLDAT     DATETIME   17   8   PICTURE "YYYYMMDD" AS "Cabecera de doc.artículo;Fecha de documento en documento"  
+MKPF_BUDAT     DATETIME   25   8   PICTURE "YYYYMMDD" AS "Cabecera de doc.artículo;Fecha de contabilización en el documento"  
+MKPF_CPUDT     DATETIME   33   8   PICTURE "YYYYMMDD" AS "Cabecera de doc.artículo;Día del registro del documento contable"  
+MKPF_USNAM     ASCII      41  12   AS "Cabecera de doc.artículo;Nombre del usuario"  
+MKPF_XBLNR     ASCII      53  16   AS "Cabecera de doc.artículo;Número de documento de referencia"  
+MKPF_LE_VBELN  ASCII      69  10   AS "Cabecera de doc.artículo;Entrega"  
+MSEG_MBLNR     ASCII      79  10   AS "Segmento doc.material;Número de documento artículo"  
+MSEG_MJAHR     ASCII      89   4   AS "Segmento doc.material;Ejercicio del documento de artículo"  
+MSEG_ZEILE     ASCII      93   4   AS "Segmento doc.material;Posición en documento de artículo"  
+MSEG_LINE_ID   ASCII      97   6   AS "Segmento doc.material;Identificación unívoca de la posición de documento"  
+MSEG_BWART     ASCII     103   3   AS "Segmento doc.material;Clase de movimiento (gestión stocks)"  
+MSEG_MATNR     ASCII     106  18   AS "Segmento doc.material;Número de artículo"  
+MSEG_WERKS     ASCII     124   4   AS "Segmento doc.material;Centro"  
+MSEG_LGORT     ASCII     128   4   AS "Segmento doc.material;Almacén"  
+MSEG_LIFNR     ASCII     132  10   AS "Segmento doc.material;Número de cuenta del proveedor"  
+MSEG_DMBTR     PRINT     142  16 2 AS "Segmento doc.material;Importe en moneda local"  
+MSEG_MENGE     NUMERIC   158  17 3 AS "Segmento doc.material;Cantidad"  
+MSEG_EBELN     ASCII     175  10   AS "Segmento doc.material;Número de pedido"  
+MSEG_EBELP     ASCII     185   5   AS "Segmento doc.material;Número de posición del documento de compras"  
+MSEG_GJAHR     ASCII     190   4   AS "Segmento doc.material;Ejercicio"  
+MSEG_BUKRS     ASCII     194   4   AS "Segmento doc.material;Sociedad"  
+MSEG_BSTMG     NUMERIC   198  17 3 AS "Segmento doc.material;Cantidad entrada de mercancías en unidad de medida de pedido"  
+EKPO_EBELN     ASCII     215  10   AS "Posición del documento de compras;Número del documento de compras"  
+EKPO_EBELP     ASCII     225   5   AS "Posición del documento de compras;Número de posición del documento de compras"  
+EKPO_MATNR     ASCII     230  18   AS "Posición del documento de compras;Número de artículo"  
+EKPO_TXZ01     ASCII     248  40   AS "Posición del documento de compras;Texto breve"  
+EKPO_WERKS     ASCII     288   4   AS "Posición del documento de compras;Centro"  
+EKPO_MENGE     NUMERIC   292  17 3 AS "Posición del documento de compras;Cantidad de pedido"  
+EKPO_MTART     ASCII     309   4   AS "Posición del documento de compras;Tipo de artículo"  
+EKKO_EBELN     ASCII     313  10   AS "Cabecera del documento de compras;Número del documento de compras"  
+EKKO_BUKRS     ASCII     323   4   AS "Cabecera del documento de compras;Sociedad"  
+EKKO_BSTYP     ASCII     327   1   AS "Cabecera del documento de compras;Tipo de documento de compras"  
+EKKO_BSART     ASCII     328   4   AS "Cabecera del documento de compras;Clase de documento de compras"  
+EKKO_AEDAT     DATETIME  332   8   PICTURE "YYYYMMDD" AS "Cabecera del documento de compras;Fecha de creación del registro"  
+EKKO_LIFNR     ASCII     340  10   AS "Cabecera del documento de compras;Número de cuenta del proveedor"  
+MARA_MATNR     ASCII     350  18   AS "Datos generales artículo;Número de artículo"  
+MARA_MTART     ASCII     368   4   AS "Datos generales artículo;Tipo de artículo"  
+MARA_BRAND_ID  ASCII     372   4   AS "Datos generales artículo;Marca"  
+MARA_MATKL     ASCII     376   9   AS "Datos generales artículo;Grupo de artículos"  
+MARA_VOLUM     NUMERIC   385  17 3 AS "Datos generales artículo;Volumen"  
+LFA1_LIFNR     ASCII     402  10   AS "Maestro de proveedores (parte general);Número de cuenta del proveedor o acreedor"  
+LFA1_NAME1     ASCII     412  35   AS "Maestro de proveedores (parte general);Nombre 1"  
+^LAYOUT   GruposArticulo                                                      124 D,T.
+KLAH_CLINT     ASCII       1  10   AS "Datos cabecera clase;Número de clase interno"  
+KLAH_KLART     ASCII      11   3   AS "Datos cabecera clase;Categoría de la clase"  
+KLAH_CLASS     ASCII      14  18   AS "Datos cabecera clase;N° de clase"  
+KLAH_STATU     ASCII      32   1   AS "Datos cabecera clase;Status de clase"  
+SWOR_CLINT     ASCII      33  10   AS "Sistema de clasificación: palabras clave;Número de clase interno"  
+SWOR_KSCHL     ASCII      43  40   AS "Sistema de clasificación: palabras clave;Palabras clave"  
+SWOR_KSCHG     ASCII      83  40   AS "Sistema de clasificación: palabras clave;Palabra clave (letras grandes para matchcode)"  
+^LAYOUT   Marcas                                                              36 D,T.
+WRF_BRANDS_T_BRAND_ID ASCII       1   4   AS "Nombres de marcas;Marca"  
+WRF_BRANDS_T_BRAND_DESCR ASCII       5  30   AS "Nombres de marcas;Denominación marca"  
+^LAYOUT   CostoTmp                                                            68 D,T.
+A073_KAPPL     ASCII       1   2   AS "Artículo por OrgVta/CanDistr;Aplicación"  
+A073_KSCHL     ASCII       3   4   AS "Artículo por OrgVta/CanDistr;Clase de condición"  
+A073_MATNR     ASCII       7  18   AS "Artículo por OrgVta/CanDistr;Número de artículo"  
+A073_KNUMH     ASCII      25  10   AS "Artículo por OrgVta/CanDistr;Nº registro condición"  
+A073_DATAB     DATETIME   35   8   PICTURE "YYYYMMDD" AS "Artículo por OrgVta/CanDistr;Inicio de validez de la condición"  
+A073_DATBI     DATETIME   43   8   PICTURE "YYYYMMDD" AS "Artículo por OrgVta/CanDistr;Fin de validez del registro de condición"  
+KONP_KBETR     PRINT      51  16 2 AS "Condiciones (Posición);Importe/porcentaje de condición si no existe escala"  
+^FOLDER   Tablas                                                               1593534508
 [PARENT_FOLDER_ID] 0
-[SERVER] "Analytics Exchange"
-[REFRESH] SOURCE "EXCEL FILES" TABLE "Datos$" QUALIFIER "Datos.xls" TO "c:\acl\data\repository\datafiles\74bca8ed-6432-4192-ba0f-ed667d007440" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar","subdiarios","confinaweb","adaptadores","buzon_04","Usu_Rumbo","Cl_Rumbo","bancos","clientes_nuevo","Usu_VTOL","Cl_VTOL" 
-^FOLDER   Tablas                              1593534508
+^FOLDER   Scripts                                                              1593534819
 [PARENT_FOLDER_ID] 0
-^FOLDER   Scripts                             1593534819
+^LOGFILE  ReporteIngresos                                                                                                                                                                                                                                                      "" "ReporteIngresos.LOG"
 [PARENT_FOLDER_ID] 0
-^BATCH    S020_Importar                      
-[PARENT_FOLDER_ID] 0
-SET SAFETY OFF
-
-COMM 
-IMPORT SAP PASSWORD 1 TO MKPF_MSEG SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>MKPF_MSEG.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>330</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>6</o><l>101</l><h>102</h></w><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc></js></q>
-OPEN MKPF_MSEG
-
-COMM MKPF_MSEG_EKKO_EKPO_MARA_LFA1
-
-IMPORT SAP PASSWORD 1 TO IngresosEgresosTMP SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>IngresosEgresosTMP.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>404</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>6</o><l>101</l><h>102</h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>EKPO</n><a>T00004</a><td>Posición del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>EBELP</f><f>MATNR</f><f>TXZ01</f><f>WERKS</f><f>MENGE</f><f>MTART</f></fs><wc></wc></t><t><n>EKKO</n><a>T00005</a><td>Cabecera del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>BUKRS</f><f>BSTYP</f><f>BSART</f><f>AEDAT</f><f>LIFNR</f></fs><wc></wc></t><t><n>MARA</n><a>T00007</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>BRAND_ID</f><f>MATKL</f><f>VOLUM</f></fs><wc></wc></t><t><n>LFA1</n><a>T00011</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELN</pf></pt><ct><ca>T00004</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELP</pf></pt><ct><ca>T00004</ca><cf>EBELP</cf></ct></jc><jc><pt><pa>T00004</pa><pf>EBELN</pf></pt><ct><ca>T00005</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00004</pa><pf>MATNR</pf></pt><ct><ca>T00007</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00005</pa><pf>LIFNR</pf></pt><ct><ca>T00011</ca><cf>LIFNR</cf></ct></jc></js></q>
-
-COMM
-IMPORT SAP PASSWORD 1 TO IngresosEgresos SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>IngresosEgresos.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>404</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>6</o><l>101</l><h>102</h></w><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>EKPO</n><a>T00004</a><td>Posición del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>EBELP</f><f>MATNR</f><f>TXZ01</f><f>WERKS</f><f>MENGE</f><f>MTART</f></fs><wc></wc></t><t><n>EKKO</n><a>T00005</a><td>Cabecera del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>BUKRS</f><f>BSTYP</f><f>BSART</f><f>AEDAT</f><f>LIFNR</f></fs><wc></wc></t><t><n>MARA</n><a>T00007</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>BRAND_ID</f><f>MATKL</f><f>VOLUM</f></fs><wc></wc></t><t><n>LFA1</n><a>T00011</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELN</pf></pt><ct><ca>T00004</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELP</pf></pt><ct><ca>T00004</ca><cf>EBELP</cf></ct></jc><jc><pt><pa>T00004</pa><pf>EBELN</pf></pt><ct><ca>T00005</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00004</pa><pf>MATNR</pf></pt><ct><ca>T00007</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00005</pa><pf>LIFNR</pf></pt><ct><ca>T00011</ca><cf>LIFNR</cf></ct></jc></js></q>
-
-OPEN IngresosEgresosTMP
-
-
-COMM KLAH_SWOR
-
-IMPORT SAP PASSWORD 1 TO GruposArticulo SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>GruposArticulo.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>124</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>KLAH</n><a>T00001</a><td>Datos cabecera clase</td><tt>1</tt><fs><f>CLINT</f><f>KLART</f><f>CLASS</f><f>STATU</f></fs><wc><w><f>BISDT</f><o>0</o><l>99991231</l><h></h></w><w><f>KLART</f><o>0</o><l>026</l><h></h></w></wc></t><t><n>SWOR</n><a>T00002</a><td>Sistema de clasificación: palabras clave</td><tt>1</tt><fs><f>CLINT</f><f>KSCHL</f><f>KSCHG</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>CLINT</pf></pt><ct><ca>T00002</ca><cf>CLINT</cf></ct></jc></js></q>
-
-OPEN GruposArticulo
-
-COMM WRF_BRANDS_T
-
-IMPORT SAP PASSWORD 1 TO Marcas SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>Marcas.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>36</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>WRF_BRANDS_T</n><a>T00001</a><td>Nombres de marcas</td><tt>1</tt><fs><f>BRAND_ID</f><f>BRAND_DESCR</f></fs><wc><w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js></js></q>
-
-COMM <w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w>
-
-OPEN Marcas
-
-COMM 
------------------------------------A073_KONP_COSTO
-Filtros
-En A073 KAPPL = V
- <w><f>KAPPL</f><o>0</o><l>V</l><h></h></w>
- <w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w>
- <w><f>VKORG</f><o>0</o><l>1000</l><h></h></w>
- <w><f>VTWEG</f><o>0</o><l>20</l><h></h></w>
- <w><f>DATAB</f><o>3</o><l>%v_hoy_SAP%</l><h></h></w>
- <w><f>DATBI</f><o>5</o><l>%v_hoy_SAP%</l><h></h></w>
- KSCHL = ZKP0
- VKORG = 1000
- VTWEG = 20
- DATAB <= '%v_hoy_SAP%'
- DATBI >= '%v_hoy_SAP%' WHERE opo_fec_des <= '%v_hoy%' AND opo_fec_has >= '%v_hoy%'
-En KONP
- KAPPL  = V
- KSCHL = ZKP0
- KBETR
-
-IMPORT SAP PASSWORD 1 TO A073_KONP_COSTO_TMP SAP SOURCE "SAP AGENT" <q version="6.0"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>A073_KONP_COSTO_TMP.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>52</dl><m>0</m><r>5000</r><ar>1</ar><e>500</e><ts><t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f></fs><wc><w><f>KAPPL</f><o>0</o><l>V</l><h></h></w><w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w><w><f>VKORG</f><o>0</o><l>1000</l><h></h></w><w><f>VTWEG</f><o>0</o><l>20</l><h></h></w><w><f>DATAB</f><o>3</o><l>%v_hoy_SAP%</l><h></h></w><w><f>DATBI</f><o>5</o><l>%v_hoy_SAP%</l><h></h></w></wc></t><t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc></js></q>
-
-OPEN A073_KONP_COSTO_TMP
-
-COMM 
------------------------------------A073_KONP_VENTA
-Filtros
-En A073 KAPPL = V
- KSCHL = VKP0
- VKORG = 1000
- VTWEG = 20
- DATAB <= '%v_hoy_SAP%'
- DATBI >= '%v_hoy_SAP%' WHERE opo_fec_des <= '%v_hoy%' AND opo_fec_has >= '%v_hoy%'
-En KONP
- KAPPL  = V
- KSCHL = VKP0
- KBETR
-
-IMPORT SAP PASSWORD 1 TO A073_KONP_VENTA_TMP SAP SOURCE "SAP AGENT" <q version="6.0"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>A073_KONP_VENTA_TMP.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>52</dl><m>0</m><r>5000</r><ar>1</ar><e>500</e><ts><t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f></fs><wc><w><f>KAPPL</f><o>0</o><l>V</l><h></h></w><w><f>KSCHL</f><o>0</o><l>VKP0</l><h></h></w><w><f>VKORG</f><o>0</o><l>1000</l><h></h></w><w><f>VTWEG</f><o>0</o><l>20</l><h></h></w><w><f>DATAB</f><o>3</o><l>%v_hoy_SAP%</l><h></h></w><w><f>DATBI</f><o>5</o><l>%v_hoy_SAP%</l><h></h></w></wc></t><t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc></js></q>
-
-OPEN A073_KONP_VENTA_TMP
-
-COMM
-MARA
-MAKT
-T001W,T001K
-
-SET SAFETY ON
-^BATCH    S041_EgresosSinIngresos            
+^BATCH    S000_AX                                                             
 [PARENT_FOLDER_ID] 1593534819
-SET SAFETY OFF
+COMMENT
+//ANALYTIC ReporteIngresos
+//RESULT LOG
+//RESULT TABLE Acumulado_Mes_CDs
+//RESULT TABLE Acumulado_Mes_Sucursales
+//RESULT TABLE Ingresos_Dia_Ant_CDs
+//RESULT TABLE Ingresos_Dia_Ant_Sucursales
+//RESULT TABLE Ingresos_Detallado_CDs
+//RESULT TABLE Ingresos_Detallado_Sucursales
+//RESULT TABLE PorProveedorCosto
+//RESULT TABLE PorProveedorUnidades
+//RESULT TABLE PorRubroSubrubroCosto
+//RESULT TABLE PorRubroSubrubroUnidades
+//RESULT FILE *.XLSX
+END
 
-OPEN EgresosSinIngresos
-
-DELETE FIELD Cantidad OK
-DEFINE FIELD Cantidad COMPUTED (-1) * CantParcial
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro Fecha CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov TO "IngresosEgresos_RES" OPEN APPEND
-
-OPEN IngresosEgresos_RES
-
-
-SET SAFETY ON
-^BATCH    S060_IngresosDetallado             
-[PARENT_FOLDER_ID] 1593534819
-SET SAFETY OFF
-
-OPEN IngresosEgresos_RES
-
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro = "M222" TO "Ingresos_Detallado_CDs" 
-
-OPEN Ingresos_Detallado_CDs
-
-
-
-OPEN IngresosEgresos_RES
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro <> "M222" TO "Ingresos_Detallado_Sucursales" 
-
-OPEN Ingresos_Detallado_Sucursales
-
-
-
-SET SAFETY ON
-^BATCH    S000_Local                         
-[PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
 
 SET FOLDER /Tablas
-
-IMPORT ODBC SOURCE "Excel Files" TABLE "Datos$" QUALIFIER "D:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
 
 DO S010_Inicializar 
 DO S020_Importar 
@@ -172,8 +147,12 @@ DO S100_ArmarReporte
 
 
 SET SAFETY ON
-^BATCH    S081_ArmarFechasCosto              
+^FOLDER   B_IngresosAnulaciones                                                1637320079
 [PARENT_FOLDER_ID] 1593534819
+^FOLDER   A_MovimientosAlm0001                                                 1637320107
+[PARENT_FOLDER_ID] 1593534819
+^BATCH    S081_ArmarFechasCosto                                               
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
 
@@ -196,107 +175,23 @@ Actual = Actual + 1
 
 
 SET SAFETY ON
-^BATCH    S082_ArmarFechasUnidades           
-[PARENT_FOLDER_ID] 1593534819
+^BATCH    S041_EgresosSinIngresos                                             
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
+OPEN EgresosSinIngresos
 
-OPEN ResumenFechas
-LOCATE RECORD %Actual%
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED (-1) * CantParcial
 
-FechaActual = "F_" + SUBSTR(DATE(FechaIngreso);1;2) + "_" + SUBSTR(DATE(FechaIngreso);4;2) + "_" + SUBSTR(DATE(FechaIngreso);7;4)
-
-CamposExportar = CamposExportar + " " +FechaActual
-
-Posicion = Posicion + 12
-
-OPEN PorRubroSubrubroUnidades
-
-DELETE FIELD %FechaActual% OK 
-DEFINE FIELD %FechaActual% ACL %Posicion% 12 3 
-
-Actual = Actual + 1
-
-
-
-SET SAFETY ON
-^BATCH    S072_ArmarFechasUnidades           
-[PARENT_FOLDER_ID] 1593534819
-SET SAFETY OFF
-
-
-OPEN ResumenFechas
-LOCATE RECORD %Actual%
-
-FechaActual = "F_" + SUBSTR(DATE(FechaIngreso);1;2) + "_" + SUBSTR(DATE(FechaIngreso);4;2) + "_" + SUBSTR(DATE(FechaIngreso);7;4)
-
-CamposExportar = CamposExportar + " " +FechaActual
-
-Posicion = Posicion + 12
-
-OPEN PorProveedorUnidades
-
-DELETE FIELD %FechaActual% OK 
-DEFINE FIELD %FechaActual% ACL %Posicion% 12 3 
-
-Actual = Actual + 1
-
-
-
-SET SAFETY ON
-^BATCH    S070_ResumenProv                   
-[PARENT_FOLDER_ID] 1593534819
-SET SAFETY OFF
-
-COMM COSTO
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro Fecha CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov TO "IngresosEgresos_RES" OPEN APPEND
 
 OPEN IngresosEgresos_RES
 
-SUMMARIZE ON FechaIngreso SUBTOTAL Cantidad TO "ResumenFechas.FIL" OPEN PRESORT
-OPEN ResumenFechas
-
-COUNT
-Fechas = COUNT1
-Actual = 1
-Posicion = 24
-CamposExportar = ""
-
-OPEN IngresosEgresos_RES
-
-DELETE FIELD Campo OK
-DEFINE FIELD Campo COMPUTED DATE(FechaIngreso)
-
-CROSSTAB ON ProveedorDesc COLUMNS Campo SUBTOTAL TotalAlCosto TO "PorProveedorCosto.FIL"
-
-OPEN PorProveedorCosto
-
-DO S071_ArmarFechasCosto WHILE Actual <= Fechas
-
-EXPORT FIELDS ProveedorDesc %CamposExportar% XLSX TO "Ingresos_%Nom%" WORKSHEET PorProveedorCosto
-
-COMM UNIDADES
-
-OPEN ResumenFechas
-COUNT
-Fechas = COUNT1
-Actual = 1
-Posicion = 24
-CamposExportar = ""
-
-OPEN IngresosEgresos_RES
-
-CROSSTAB ON ProveedorDesc COLUMNS Campo SUBTOTAL Cantidad TO "PorProveedorUnidades.FIL"
-
-OPEN PorProveedorUnidades
-
-DO S072_ArmarFechasUnidades WHILE Actual <= Fechas
-
-EXPORT FIELDS ProveedorDesc %CamposExportar% XLSX TO "Ingresos_%Nom%" WORKSHEET PorProveedorUnidades
-
 
 SET SAFETY ON
-^BATCH    S080_ResumenRubro                  
-[PARENT_FOLDER_ID] 1593534819
+^BATCH    S080_ResumenRubro                                                   
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
 COMM COSTO
@@ -346,8 +241,32 @@ EXPORT FIELDS RubroDesc SubRubroDesc %CamposExportar% XLSX TO "Ingresos_%Nom%" W
 
 
 SET SAFETY ON
-^BATCH    S071_ArmarFechasCosto              
-[PARENT_FOLDER_ID] 1593534819
+^BATCH    S082_ArmarFechasUnidades                                            
+[PARENT_FOLDER_ID] 1637320079
+SET SAFETY OFF
+
+
+OPEN ResumenFechas
+LOCATE RECORD %Actual%
+
+FechaActual = "F_" + SUBSTR(DATE(FechaIngreso);1;2) + "_" + SUBSTR(DATE(FechaIngreso);4;2) + "_" + SUBSTR(DATE(FechaIngreso);7;4)
+
+CamposExportar = CamposExportar + " " +FechaActual
+
+Posicion = Posicion + 12
+
+OPEN PorRubroSubrubroUnidades
+
+DELETE FIELD %FechaActual% OK 
+DEFINE FIELD %FechaActual% ACL %Posicion% 12 3 
+
+Actual = Actual + 1
+
+
+
+SET SAFETY ON
+^BATCH    S071_ArmarFechasCosto                                               
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
 
@@ -370,188 +289,229 @@ Actual = Actual + 1
 
 
 SET SAFETY ON
-^BATCH    S040_IngresosAcumulados            
-[PARENT_FOLDER_ID] 1593534819
+^BATCH    S072_ArmarFechasUnidades                                            
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
-COMM
-Tomar los ingresos y relacionar con las anulaciones
-Clave = Centro + Articulo + Fecha
-Agregar casos de anulaciones sin Ingresos
 
-OPEN Ingresos_RES
-DEFINE RELATION Clave WITH Egresos_RES INDEX IxEgresosClave
+OPEN ResumenFechas
+LOCATE RECORD %Actual%
 
-DELETE FIELD Cantidad OK
-DEFINE FIELD Cantidad COMPUTED CantParcial - Egresos_RES.CantParcial
+FechaActual = "F_" + SUBSTR(DATE(FechaIngreso);1;2) + "_" + SUBSTR(DATE(FechaIngreso);4;2) + "_" + SUBSTR(DATE(FechaIngreso);7;4)
 
-EXTRACT FIELD Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov IF Cantidad > 0 TO "IngresosEgresos_RES"
+CamposExportar = CamposExportar + " " +FechaActual
 
-OPEN IngresosEgresos_RES
+Posicion = Posicion + 12
 
-COMMENT
-OPEN Egresos_RES
-DEFINE RELATION Clave WITH Ingresos_RES INDEX IxIngresosClave
-EXTRACT RECORD IF Ingresos_RES.CantParcial = 0 TO "EgresosSinIngresos" 
-OPEN EgresosSinIngresos
-COUNT
-DO S06_EgresosSinIngresos IF COUNT1 > 0 
-END
+OPEN PorProveedorUnidades
 
-COMM Ordenar por Centro, Articulo y Fecha Descendente para obtener la ultima fecha de Ingreso
-OPEN IngresosEgresos_RES
+DELETE FIELD %FechaActual% OK 
+DEFINE FIELD %FechaActual% ACL %Posicion% 12 3 
 
-SORT ON Centro Articulo FechaIngreso D IF TipoMov = "I" Cantidad > 0 TO "IngresosEgresos_RES_ORD"
-OPEN IngresosEgresos_RES_ORD
+Actual = Actual + 1
 
-DELETE FIELD Clave2 OK
-DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
-
-INDEX ON Clave2 TO "IxIngresosEgresosORD"
-
-COMM Fin para Ultima Fecha
-
-OPEN IngresosEgresos_RES
-
-DELETE FIELD Clave2 OK
-DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
-
-DEFINE RELATION Clave2 WITH IngresosEgresos_RES_ORD INDEX IxIngresosEgresosORD
-
-DELETE FIELD FechaUltIngreso OK
-DEFINE FIELD FechaUltIngreso COMPUTED IngresosEgresos_RES_ORD.FechaIngreso
-
-COMM
-SUMMARIZE ON Rubro RubroDesc SubRubro SubRubroDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro SUBTOTAL Cantidad OTHER FechaUltIngreso PrecioCosto PrecioVenta Volumen TO "Acumulado_Mes_TMP.FIL" OPEN PRESORT
-
-DELETE FIELD TotalAlCosto OK
-DEFINE FIELD TotalAlCosto COMPUTED Cantidad * PrecioCosto
-
-DELETE FIELD TotalVolumen OK
-DEFINE FIELD TotalVolumen COMPUTED Cantidad * Volumen
-
-SUMMARIZE ON Rubro SubRubro Grupo Marca Proveedor Articulo Centro SUBTOTAL Cantidad TotalAlCosto OTHER RubroDesc SubRubroDesc GrupoDesc MarcaDesc ProveedorDesc ArticuloDesc FechaUltIngreso PrecioCosto PrecioVenta Volumen TotalVolumen TO "Acumulado_Mes_TMP.FIL" OPEN PRESORT
-
-OPEN Acumulado_Mes_TMP
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen TO "Acumulado_Mes"
-
-
-COMM Para CDs
-
-OPEN Acumulado_Mes
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro = "M222" TO "Acumulado_Mes_CDs"
-
-OPEN Acumulado_Mes_CDs
-
-COMM Para Sucursales
-
-OPEN Acumulado_Mes
-
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro <> "M222" TO "Acumulado_Mes_Sucursales"
-
-OPEN Acumulado_Mes_Sucursales
 
 
 SET SAFETY ON
-^BATCH    S050_IngresosDiaAnterior           
+^BATCH    S200_Notificar                                                      
 [PARENT_FOLDER_ID] 1593534819
+SET SAFETY OFF
+
+Hora=TIME(NOW())
+Saludo = "Buenas Noches" IF Hora >= "20:00:00" OR Hora < "06:00:00"
+Saludo = "Buenos Dias" IF Hora >= "06:00:00" AND Hora < "13:00:00"
+Saludo = "Buenas Tardes" IF Hora >= "13:00:00" AND Hora < "20:00:00"
+
+Remitente="miguel.cabrera@grupocarsa.com"
+Contraseña="B34AD7E1F23D01842AE000BC2D6BD81E3717903B6057016AF5D4E9251D53BFBD"
+Ruta="10.4.100.28"
+Para="nicolas.delucas@gcmusimundo.com,GrupoCompras@gcmusimundo.com,PlanificacionFinanciera@grupocarsa.com"
+CC="corina.arnold@grupocarsa.com"
+BCC="miguel.cabrera@grupocarsa.com"
+Asunto="Reporte Ingresos %Nom%"
+Texto= '%Saludo%'+CHR(10)+CHR(13)+CHR(13)+"Se adjunta reporte de Ingresos."+CHR(10)+CHR(13)+CHR(13)+"Saludos."+CHR(10)+CHR(13)+CHR(13)+"Miguel Angel Cabrera"+CHR(10)+CHR(13)+" Auditoria Operativa"
+Adjunto="Ingresos_%Nom%.xlsx" 
+
+NOTIFY USER "%Remitente%" PASSWORD "%Contraseña%" MAILBOX "%Ruta%" ADDRESS "%Para%" CC "%CC%" BCC "%BCC%" SUBJECT "%Asunto%" MESSAGE "%Texto%" ATTACHMENT "%Adjunto%"
+
+SET SAFETY ON
+^BATCH    S041_RestaSinSuma                                                   
+[PARENT_FOLDER_ID] 1637320107
+SET SAFETY OFF
+
+OPEN RestaSinSuma
+
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED (-1) * CantParcial
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov TO "SumaRestaStock_RES" OPEN APPEND
+
+OPEN SumaRestaStock_RES
+
+
+SET SAFETY ON
+^BATCH    S050_IngresosDiaAnterior                                            
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
 OPEN IngresosEgresos_RES
 
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF FechaIngreso = `%v_Hasta%` AND Centro = "M222" TO "Ingresos_Dia_Ant_CDs" 
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF FechaIngreso = `%v_Hasta%` AND Centro = "M222" TO "Ingresos_Dia_Ant_CDs" 
 
 OPEN Ingresos_Dia_Ant_CDs
 
 
 OPEN IngresosEgresos_RES
 
-EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF FechaIngreso = `%v_Hasta%` AND Centro <> "M222" TO "Ingresos_Dia_Ant_Sucursales" 
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF FechaIngreso = `%v_Hasta%` AND Centro <> "M222" TO "Ingresos_Dia_Ant_Sucursales" 
 
 OPEN Ingresos_Dia_Ant_Sucursales
 
 
 SET SAFETY ON
-^BATCH    S000_AX                            
-[PARENT_FOLDER_ID] 1593534819
-COMMENT
-//ANALYTIC ReporteIngresos
-//RESULT LOG
-//RESULT TABLE Acumulado_Mes_CDs
-//RESULT TABLE Acumulado_Mes_Sucursales
-//RESULT TABLE Ingresos_Dia_Ant_CDs
-//RESULT TABLE Ingresos_Dia_Ant_Sucursales
-//RESULT TABLE Ingresos_Detallado_CDs
-//RESULT TABLE Ingresos_Detallado_Sucursales
-//RESULT TABLE PorProveedorCosto
-//RESULT TABLE PorProveedorUnidades
-//RESULT TABLE PorRubroSubrubroCosto
-//RESULT TABLE PorRubroSubrubroUnidades
-//RESULT FILE *.XLSX
-END
+^BATCH    S060_IngresosDetallado                                              
+[PARENT_FOLDER_ID] 1637320079
+SET SAFETY OFF
 
+
+OPEN IngresosEgresos_RES
+
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro = "M222" TO "Ingresos_Detallado_CDs" 
+
+OPEN Ingresos_Detallado_CDs
+
+
+
+OPEN IngresosEgresos_RES
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro <> "M222" TO "Ingresos_Detallado_Sucursales" 
+
+OPEN Ingresos_Detallado_Sucursales
+
+
+
+SET SAFETY ON
+^BATCH    S070_ResumenProv                                                    
+[PARENT_FOLDER_ID] 1637320079
+SET SAFETY OFF
+
+COMM COSTO
+
+OPEN IngresosEgresos_RES
+
+SUMMARIZE ON FechaIngreso SUBTOTAL Cantidad TO "ResumenFechas.FIL" OPEN PRESORT
+OPEN ResumenFechas
+
+COUNT
+Fechas = COUNT1
+Actual = 1
+Posicion = 24
+CamposExportar = ""
+
+OPEN IngresosEgresos_RES
+
+DELETE FIELD Campo OK
+DEFINE FIELD Campo COMPUTED DATE(FechaIngreso)
+
+CROSSTAB ON ProveedorRegDesc COLUMNS Campo SUBTOTAL TotalAlCosto TO "PorProveedorCosto.FIL"
+
+OPEN PorProveedorCosto
+
+DO S071_ArmarFechasCosto WHILE Actual <= Fechas
+
+EXPORT FIELDS ProveedorRegDesc %CamposExportar% XLSX TO "Ingresos_%Nom%" WORKSHEET PorProveedorCosto
+
+COMM UNIDADES
+
+OPEN ResumenFechas
+COUNT
+Fechas = COUNT1
+Actual = 1
+Posicion = 24
+CamposExportar = ""
+
+OPEN IngresosEgresos_RES
+
+CROSSTAB ON ProveedorRegDesc COLUMNS Campo SUBTOTAL Cantidad TO "PorProveedorUnidades.FIL"
+
+OPEN PorProveedorUnidades
+
+DO S072_ArmarFechasUnidades WHILE Actual <= Fechas
+
+EXPORT FIELDS ProveedorRegDesc %CamposExportar% XLSX TO "Ingresos_%Nom%" WORKSHEET PorProveedorUnidades
+
+
+SET SAFETY ON
+^BATCH    S000_Local                                                          
+[PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
 
 SET FOLDER /Tablas
 
+IMPORT ODBC SOURCE "Excel Files" TABLE "Datos$" QUALIFIER "F:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
+
 DO S010_Inicializar 
 DO S020_Importar 
 DO S030_Preparar 
-DO S040_IngresosAcumulados 
+
+DO S040_MovimientosAcumulados 
+DO S040_IngresosAcumulados
+
 DO S050_IngresosDiaAnterior 
 DO S060_IngresosDetallado 
 DO S070_ResumenProv 
 DO S080_ResumenRubro
 DO S100_ArmarReporte
 
-
 SET SAFETY ON
-^BATCH    S010_Inicializar                   
+^BATCH    S100_ArmarReporte                                                   
 [PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
 
-SET FOLDER /Tablas
+COMM CDs
 
-OPEN Datos
-LOCATE RECORD 1
+OPEN Ingresos_Detallado_CDs
 
-v_Usuario = ALLTRIM(Usu_SAP)
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DetalladoPorCDs
 
-SET ECHO NONE
-SET PASSWORD 1 TO ALLTRIM(Cl_SAP)
-SET ECHO ON
+OPEN Acumulado_Mes_CDs
 
-v_ayer = TODAY() - 1
-v_dias = VALUE(SUBSTRING(DATE(TODAY());1;2);0) - 1
-v_des = DATE(EOMONTH(v_ayer; -1) + 1)
-v_has = DATE(TODAY() - 1)
-v_hoy = DATE(TODAY())
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET AcumuladoMesCDs
+
+OPEN Ingresos_Dia_Ant_CDs
+
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DiaAntCDs
+
+
+COMM Sucursales
+
+OPEN Ingresos_Detallado_Sucursales
+
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DetalladoPorSucursales
+
+OPEN Acumulado_Mes_Sucursales
+
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET AcumuladoMesSucursales
+
+OPEN Ingresos_Dia_Ant_Sucursales
+
+EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DiaAntSucursales
 
 COMM
-Prueba
-v_des = "01/10/2021"
-v_has = "21/10/2021"
-v_hoy = "22/10/2021"
-
-v_Desde = SUBSTR(v_des;7;4)+SUBSTR(v_des;4;2)+SUBSTR(v_des;1;2)
-v_Hasta = SUBSTR(v_has;7;4)+SUBSTR(v_has;4;2)+SUBSTR(v_has;1;2)
-
-
-v_hoy_SAP = SUBSTR(v_hoy;7;4)+SUBSTR(v_hoy;4;2)+SUBSTR(v_hoy;1;2)
-
-Nom = SUBSTR(v_has;1;2)+SUBSTR(v_has;4;2)+SUBSTR(v_has;7;4)
-
-vDirectorio = "T:"
-vDirectorio = "\\srvfs01\STOCK_CURVA"
-
-vLineas = 0
+IF vLineas > 0 DO S200_Notificar
 
 SET SAFETY ON
-^BATCH    S030_Preparar                      
-[PARENT_FOLDER_ID] 0
+^BATCH    S030_Preparar                                                       
+[PARENT_FOLDER_ID] 1593534819
 SET SAFETY OFF
+
+COMM 
+------------------------------ProveedorRegular
+
+OPEN ProveedorRegular
+
+INDEX ON EINA_MATNR TO "IxProvRegMat"
 
 COMM 
 ------------------------------A073_KONP_COSTO
@@ -644,6 +604,13 @@ DEFINE RELATION Grupo WITH GruposArticulo INDEX IxClass AS GruposArticulo3
 DEFINE RELATION MARA_BRAND_ID WITH Marcas INDEX IxBrand
 DEFINE RELATION MARA_MATNR WITH A073_KONP_COSTO INDEX IxCostoArt
 DEFINE RELATION MARA_MATNR WITH A073_KONP_VENTA INDEX IxVentaArt
+DEFINE RELATION MARA_MATNR WITH ProveedorRegular INDEX IxProvRegMat
+
+DELETE FIELD ProveedorReg OK
+DEFINE FIELD ProveedorReg COMPUTED STRING(VALUE(ProveedorRegular.LFA1_LIFNR;0);10)
+
+DELETE FIELD ProveedorRegDesc OK
+DEFINE FIELD ProveedorRegDesc COMPUTED ProveedorRegular.LFA1_NAME1
 
 DELETE FIELD RubroDesc OK
 DEFINE FIELD RubroDesc COMPUTED GruposArticulo.SWOR_KSCHL
@@ -669,7 +636,7 @@ DEFINE FIELD Volumen COMPUTED MARA_VOLUM
 EXTRACT RECORD IF Movimiento = "101" AND MATCH(MARA_MTART;"ZPRO";"ZBLA";"ZPVV") TO "Ingresos"
 OPEN Ingresos
 
-SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc Proveedor  Articulo Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc ProveedorDesc ArticuloDesc PrecioCosto PrecioVenta Volumen TO "Ingresos_RES.FIL" OPEN PRESORT
+SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc ProveedorReg Articulo Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc Proveedor ProveedorDesc ProveedorRegDesc ArticuloDesc PrecioCosto PrecioVenta Volumen TO "Ingresos_RES.FIL" OPEN PRESORT
 OPEN Ingresos_RES
 
 COUNT 
@@ -687,7 +654,7 @@ OPEN IngresosEgresos
 EXTRACT RECORD IF Movimiento = "102" AND MATCH(MARA_MTART;"ZPRO";"ZBLA";"ZPVV") TO "Egresos"
 OPEN Egresos
 
-SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc Proveedor Articulo Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc ProveedorDesc ArticuloDesc PrecioCosto PrecioVenta Volumen TO "Egresos_RES.FIL" OPEN PRESORT
+SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc ProveedorReg Articulo Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc ProveedorDesc Proveedor ProveedorRegDesc ArticuloDesc PrecioCosto PrecioVenta Volumen TO "Egresos_RES.FIL" OPEN PRESORT
 OPEN Egresos_RES
 
 DELETE FIELD TipoMov OK
@@ -698,64 +665,608 @@ DEFINE FIELD Clave COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo) + "-" + DA
 
 INDEX ON Clave TO "IxEgresosClave"
 
+COMM 
+------------------------------Traspasos e Ingresos del Service
+
+COMM 
+------------------------------MovimientosAlm0002TMP
+OPEN MovimientosAlm0002TMP
+DELETE FIELD Clave OK
+DEFINE FIELD Clave COMPUTED DATE(MKPF_CPUDT) + MSEG_WERKS + MSEG_MATNR + STRING(MSEG_MENGE;20)
+INDEX ON Clave TO "IxMovAlm002"
+
+COMM 
+------------------------------MovimientosAlm0001TMP
+
+OPEN MovimientosAlm0001TMP
+
+DELETE FIELD Clave OK
+DEFINE FIELD Clave COMPUTED DATE(MKPF_CPUDT) + MSEG_WERKS + MSEG_MATNR + STRING(MSEG_MENGE;20)
+
+COMM
+DEFINE RELATION Clave WITH MovimientosAlm0002TMP INDEX IxMovAlm002
+
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED
+""
+MSEG_MENGE IF MSEG_SHKZG = "S"
+MSEG_MENGE * (-1)
+
+COMM Resumir por MSEG_MATNR, MSEG_BWART, MSEG_WERKS, MSEG_LGORT
+
+DELETE FIELD Movimiento OK
+DEFINE FIELD Movimiento COMPUTED MSEG_BWART
+
+DELETE FIELD Centro OK
+DEFINE FIELD Centro COMPUTED MSEG_WERKS 
+
+DELETE FIELD FechaIngreso OK
+DEFINE FIELD FechaIngreso COMPUTED MKPF_CPUDT
+
+DELETE FIELD Articulo OK
+DEFINE FIELD Articulo COMPUTED STRING(VALUE(MSEG_MATNR;0);18)
+
+DELETE FIELD ArticuloDesc OK
+DEFINE FIELD ArticuloDesc COMPUTED MAKT_MAKTX
+
+DELETE FIELD CantParcial OK
+DEFINE FIELD CantParcial COMPUTED MSEG_MENGE
+
+DELETE FIELD ImporteML OK
+DEFINE FIELD ImporteML COMPUTED MSEG_DMBTR
+
+DELETE FIELD Rubro OK
+DEFINE FIELD Rubro COMPUTED SUBSTR(MARA_MATKL;1;3)
+
+DELETE FIELD SubRubro OK
+DEFINE FIELD SubRubro COMPUTED SUBSTR(MARA_MATKL;1;6)
+
+DELETE FIELD Grupo OK
+DEFINE FIELD Grupo COMPUTED SUBSTR(MARA_MATKL;1;9)
+
+DELETE FIELD Marca OK
+DEFINE FIELD Marca COMPUTED MARA_BRAND_ID
+
+DELETE FIELD Proveedor OK
+DEFINE FIELD Proveedor COMPUTED "          "
+
+DELETE FIELD ProveedorDesc OK
+DEFINE FIELD ProveedorDesc COMPUTED "                                   "
+
+DEFINE RELATION Rubro WITH GruposArticulo INDEX IxClass
+DEFINE RELATION SubRubro WITH GruposArticulo INDEX IxClass AS GruposArticulo2
+DEFINE RELATION Grupo WITH GruposArticulo INDEX IxClass AS GruposArticulo3
+DEFINE RELATION MARA_BRAND_ID WITH Marcas INDEX IxBrand
+DEFINE RELATION MARA_MATNR WITH A073_KONP_COSTO INDEX IxCostoArt
+DEFINE RELATION MARA_MATNR WITH A073_KONP_VENTA INDEX IxVentaArt
+DEFINE RELATION MARA_MATNR WITH ProveedorRegular INDEX IxProvRegMat
+
+DELETE FIELD ProveedorReg OK
+DEFINE FIELD ProveedorReg COMPUTED STRING(VALUE(ProveedorRegular.LFA1_LIFNR;0);10)
+
+DELETE FIELD ProveedorRegDesc OK
+DEFINE FIELD ProveedorRegDesc COMPUTED ProveedorRegular.LFA1_NAME1
+
+DELETE FIELD RubroDesc OK
+DEFINE FIELD RubroDesc COMPUTED GruposArticulo.SWOR_KSCHL
+
+DELETE FIELD SubRubroDesc OK
+DEFINE FIELD SubRubroDesc COMPUTED GruposArticulo2.SWOR_KSCHL
+
+DELETE FIELD GrupoDesc OK
+DEFINE FIELD GrupoDesc COMPUTED GruposArticulo3.SWOR_KSCHL 
+
+DELETE FIELD MarcaDesc OK
+DEFINE FIELD MarcaDesc COMPUTED Marcas.WRF_BRANDS_T_BRAND_DESCR
+
+DELETE FIELD PrecioCosto OK
+DEFINE FIELD PrecioCosto COMPUTED A073_KONP_COSTO.KONP_KBETR/100
+
+DELETE FIELD PrecioVenta OK
+DEFINE FIELD PrecioVenta COMPUTED A073_KONP_VENTA.KONP_KBETR/100
+
+DELETE FIELD Volumen OK
+DEFINE FIELD Volumen COMPUTED MARA_VOLUM
+
+EXTRACT RECORD IF Cantidad > 0 TO "SumaStock"
+
+OPEN SumaStock
+
+SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc Articulo ArticuloDesc Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc PrecioCosto PrecioVenta Volumen TO "SumaStock_RES.FIL" OPEN PRESORT
+
+OPEN SumaStock_RES
+
+COUNT 
+vLineas2 = vLineas2 + COUNT1
+
+DELETE FIELD TipoMov OK
+DEFINE FIELD TipoMov COMPUTED "S"
+
+DELETE FIELD Clave OK
+DEFINE FIELD Clave COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo) + "-" + DATE(FechaIngreso)
+
+INDEX ON Clave TO "IxSumaStockClave"
+
+OPEN MovimientosAlm0001TMP
+
+EXTRACT RECORD IF Cantidad < 0 TO "RestaStock"
+
+OPEN RestaStock
+
+SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc Articulo ArticuloDesc Centro FechaIngreso SUBTOTAL CantParcial OTHER RubroDesc SubRubroDesc GrupoDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc PrecioCosto PrecioVenta Volumen TO "RestaStock_RES.FIL" OPEN PRESORT
+
+OPEN RestaStock_RES
+
+DELETE FIELD TipoMov OK
+DEFINE FIELD TipoMov COMPUTED "R"
+
+DELETE FIELD Clave OK
+DEFINE FIELD Clave COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo) + "-" + DATE(FechaIngreso)
+
+INDEX ON Clave TO "IxRestaStockClave"
+
+
 SET SAFETY ON
-^BATCH    S100_ArmarReporte                  
-[PARENT_FOLDER_ID] 1593534819
+^BATCH    S040_IngresosAcumulados                                             
+[PARENT_FOLDER_ID] 1637320079
 SET SAFETY OFF
 
-COMM CDs
+COMM
+Tomar los ingresos y relacionar con las anulaciones
+Clave = Centro + Articulo + Fecha
+Agregar casos de anulaciones sin Ingresos
 
-OPEN Ingresos_Detallado_CDs
+OPEN Ingresos_RES
+DEFINE RELATION Clave WITH Egresos_RES INDEX IxEgresosClave
 
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DetalladoPorCDs
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED CantParcial - Egresos_RES.CantParcial
+
+EXTRACT FIELD Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov IF Cantidad > 0 TO "IngresosEgresos_RES_TMP"
+
+OPEN IngresosEgresos_RES_TMP
+
+COMMENT
+OPEN Egresos_RES
+DEFINE RELATION Clave WITH Ingresos_RES INDEX IxIngresosClave
+EXTRACT RECORD IF Ingresos_RES.CantParcial = 0 TO "EgresosSinIngresos" 
+OPEN EgresosSinIngresos
+COUNT
+DO S06_EgresosSinIngresos IF COUNT1 > 0 
+END
+
+COMM Ordenar por Centro, Articulo y Fecha Descendente para obtener la ultima fecha de Ingreso
+OPEN IngresosEgresos_RES_TMP
+
+COMM
+Agrega el detalle de Suma y Resta del 0001 y despues no deberia tocar mas nada
+
+
+OPEN SumaRestaStock_Final 
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov TO "IngresosEgresos_RES_TMP" OPEN APPEND
+
+
+COMM
+Fin: Agrega el detalle de Suma y Resta del 0001 y despues no deberia tocar mas nada
+
+
+OPEN IngresosEgresos_RES_TMP
+
+
+SUMMARIZE ON Rubro SubRubro Grupo Marca MarcaDesc ProveedorReg Articulo Centro FechaIngreso SUBTOTAL Cantidad OTHER RubroDesc SubRubroDesc GrupoDesc Proveedor ProveedorDesc ProveedorRegDesc ArticuloDesc PrecioCosto PrecioVenta Volumen COUNT Clave TipoMov TO "IngresosEgresos_RES.FIL" OPEN PRESORT
+
+OPEN IngresosEgresos_RES
+
+COMM
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED CantParcial
+
+SORT ON Centro Articulo FechaIngreso D TipoMov TO "IngresosEgresos_RES_ORD"
+OPEN IngresosEgresos_RES_ORD
+
+DELETE FIELD Clave2 OK
+DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
+
+INDEX ON Clave2 TO "IxIngresosEgresosORD"
+
+COMM Fin para Ultima Fecha
+
+OPEN IngresosEgresos_RES
+
+DELETE FIELD Clave2 OK
+DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
+
+DEFINE RELATION Clave2 WITH IngresosEgresos_RES_ORD INDEX IxIngresosEgresosORD
+
+DELETE FIELD FechaUltIngreso OK
+DEFINE FIELD FechaUltIngreso COMPUTED IngresosEgresos_RES_ORD.FechaIngreso
+
+COMM
+SUMMARIZE ON Rubro RubroDesc SubRubro SubRubroDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro SUBTOTAL Cantidad OTHER FechaUltIngreso PrecioCosto PrecioVenta Volumen TO "Acumulado_Mes_TMP.FIL" OPEN PRESORT
+
+DELETE FIELD TotalAlCosto OK
+DEFINE FIELD TotalAlCosto COMPUTED Cantidad * PrecioCosto
+
+DELETE FIELD TotalVolumen OK
+DEFINE FIELD TotalVolumen COMPUTED Cantidad * Volumen
+
+SUMMARIZE ON Rubro SubRubro Grupo Marca ProveedorReg Articulo Centro SUBTOTAL Cantidad TotalAlCosto OTHER RubroDesc SubRubroDesc GrupoDesc MarcaDesc ProveedorDesc Proveedor ProveedorRegDesc ArticuloDesc FechaUltIngreso PrecioCosto PrecioVenta Volumen TotalVolumen TO "Acumulado_Mes_TMP.FIL" OPEN PRESORT
+
+OPEN Acumulado_Mes_TMP
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen TO "Acumulado_Mes"
+
+OPEN Acumulado_Mes
+
+COMM Para CDs
+
+OPEN Acumulado_Mes
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro = "M222" TO "Acumulado_Mes_CDs"
 
 OPEN Acumulado_Mes_CDs
 
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET AcumuladoMesCDs
+COMM Para Sucursales
 
-OPEN Ingresos_Dia_Ant_CDs
+OPEN Acumulado_Mes
 
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DiaAntCDs
-
-
-COMM Sucursales
-
-OPEN Ingresos_Detallado_Sucursales
-
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DetalladoPorSucursales
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro <> "M222" TO "Acumulado_Mes_Sucursales"
 
 OPEN Acumulado_Mes_Sucursales
 
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET AcumuladoMesSucursales
-
-OPEN Ingresos_Dia_Ant_Sucursales
-
-EXPORT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen XLSX TO "Ingresos_%Nom%" WORKSHEET DiaAntSucursales
-
-IF vLineas > 0 DO S200_Notificar
-
 SET SAFETY ON
-^BATCH    S200_Notificar                     
-[PARENT_FOLDER_ID] 0
+
+^BATCH    S040_MovimientosAcumulados                                          
+[PARENT_FOLDER_ID] 1637320107
 SET SAFETY OFF
 
-Hora=TIME(NOW())
-Saludo = "Buenas Noches" IF Hora >= "20:00:00" OR Hora < "06:00:00"
-Saludo = "Buenos Dias" IF Hora >= "06:00:00" AND Hora < "13:00:00"
-Saludo = "Buenas Tardes" IF Hora >= "13:00:00" AND Hora < "20:00:00"
+COMM                Para los movimientos almacen 0001
+COMM
+Tomar los ingresos y relacionar con las anulaciones
+Clave = Centro + Articulo + Fecha
+Agregar casos de anulaciones sin Ingresos
 
-Remitente="miguel.cabrera@grupocarsa.com"
-Contraseña="B34AD7E1F23D01842AE000BC2D6BD81E3717903B6057016AF5D4E9251D53BFBD"
-Ruta="10.4.100.28"
-Para="nicolas.delucas@gcmusimundo.com,GrupoCompras@gcmusimundo.com,PlanificacionFinanciera@grupocarsa.com"
-CC="corina.arnold@grupocarsa.com"
-BCC="miguel.cabrera@grupocarsa.com"
-Asunto="Reporte Ingresos %Nom%"
-Texto= '%Saludo%'+CHR(10)+CHR(13)+CHR(13)+"Se adjunta reporte de Ingresos."+CHR(10)+CHR(13)+CHR(13)+"Saludos."+CHR(10)+CHR(13)+CHR(13)+"Miguel Angel Cabrera"+CHR(10)+CHR(13)+" Auditoria Operativa"
-Adjunto="Ingresos_%Nom%.xlsx" 
+OPEN SumaStock_RES
 
-NOTIFY USER "%Remitente%" PASSWORD "%Contraseña%" MAILBOX "%Ruta%" ADDRESS "%Para%" CC "%CC%" BCC "%BCC%" SUBJECT "%Asunto%" MESSAGE "%Texto%" ATTACHMENT "%Adjunto%"
+DEFINE RELATION Clave WITH RestaStock_RES INDEX IxRestaStockClave
+
+DELETE FIELD Cantidad OK
+DEFINE FIELD Cantidad COMPUTED CantParcial - RestaStock_RES.CantParcial
+
+EXTRACT FIELD Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc Articulo ArticuloDesc Centro FechaIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov IF Cantidad <> 0 TO "SumaRestaStock_RES"
+
+OPEN SumaRestaStock_RES
+
+
+OPEN RestaStock_RES
+DEFINE RELATION Clave WITH SumaStock_RES INDEX IxSumaStockClave
+EXTRACT RECORD IF SumaStock_RES.CantParcial = 0 TO "RestaSinSuma" 
+OPEN RestaSinSuma
+COUNT
+DO S041_RestaSinSuma IF COUNT1 > 0 
+
+SET SAFETY OFF
+
+COMM Ordenar por Centro, Articulo y Fecha Descendente para obtener la ultima fecha de Ingreso
+OPEN SumaRestaStock_RES
+
+
+SORT ON Centro Articulo FechaIngreso D TO "SumaRestaStock_RES_ORD"
+OPEN SumaRestaStock_RES_ORD
+
+DELETE FIELD Clave2 OK
+DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
+
+INDEX ON Clave2 TO "IxSumaRestaStockORD"
+
+COMM Fin para Ultima Fecha
+
+OPEN SumaRestaStock_RES
+
+DELETE FIELD Clave2 OK
+DEFINE FIELD Clave2 COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo)
+
+DEFINE RELATION Clave2 WITH SumaRestaStock_RES_ORD INDEX IxSumaRestaStockORD
+
+DELETE FIELD FechaUltIngreso OK
+DEFINE FIELD FechaUltIngreso COMPUTED SumaRestaStock_RES_ORD.FechaIngreso
+
+COMM
+SUMMARIZE ON Rubro RubroDesc SubRubro SubRubroDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro SUBTOTAL Cantidad OTHER FechaUltIngreso PrecioCosto PrecioVenta Volumen TO "Acumulado_Mes_TMP.FIL" OPEN PRESORT
+
+DELETE FIELD TotalAlCosto OK
+DEFINE FIELD TotalAlCosto COMPUTED Cantidad * PrecioCosto
+
+DELETE FIELD TotalVolumen OK
+DEFINE FIELD TotalVolumen COMPUTED Cantidad * Volumen
+
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc ProveedorReg ProveedorRegDesc  Articulo ArticuloDesc Centro FechaIngreso FechaUltIngreso CantParcial COUNT PrecioCosto PrecioVenta Volumen Cantidad Clave TipoMov  TO "SumaRestaStock_Final"
+
+OPEN SumaRestaStock_Final
+
+
+DELETE FIELD Clave OK
+DEFINE FIELD Clave COMPUTED ALLTRIM(Centro) + "-" + ALLTRIM(Articulo) + "-" + DATE(FechaUltIngreso)
+
+INDEX ON Clave TO "IxSumaRestaStockClave"
+
+
+COMM Saco para probar 1911221
+COMM
+SUMMARIZE ON Rubro SubRubro Grupo Marca Articulo Centro SUBTOTAL Cantidad TotalAlCosto OTHER RubroDesc SubRubroDesc GrupoDesc MarcaDesc Proveedor ProveedorDesc ArticuloDesc FechaUltIngreso PrecioCosto PrecioVenta Volumen TotalVolumen TO "SumaRestaStockAcum_Mes_TMP.FIL" OPEN PRESORT
+OPEN SumaRestaStockAcum_Mes_TMP
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc Marca MarcaDesc Proveedor ProveedorDesc Articulo ArticuloDesc Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen  TO "SumaRestaStockAcum_Mes"
+OPEN SumaRestaStockAcum_Mes
+
+COMM 
+Para CDs
+OPEN SumaRestaStockAcum_Mes
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Articulo Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro = "M222" TO "SumaRestaStockAcum_Mes_CDs"
+OPEN SumaRestaStockAcum_Mes_CDs
+
+COMM 
+Para Sucursales
+OPEN SumaRestaStockAcum_Mes
+EXTRACT FIELDS Rubro RubroDesc SubRubro SubRubroDesc Grupo GrupoDesc  Marca MarcaDesc Articulo Centro FechaUltIngreso Cantidad PrecioCosto PrecioVenta TotalAlCosto Volumen TotalVolumen IF Centro <> "M222" TO "SumaRestaStockAcum_Mes_Sucursales"
+OPEN SumaRestaStockAcum_Mes_Sucursales
 
 SET SAFETY ON
-^LOGFILE  ReporteIngresos                     "" "ReporteIngresos.log"
-[PARENT_FOLDER_ID] 0
+
+^BATCH    S010_Inicializar                                                    
+[PARENT_FOLDER_ID] 1593534819
+SET SAFETY OFF
+
+SET FOLDER /Tablas
+
+OPEN Datos
+LOCATE RECORD 1
+
+v_Usuario = ALLTRIM(Usu_SAP)
+
+SET ECHO NONE
+SET PASSWORD 1 TO ALLTRIM(Cl_SAP)
+SET ECHO ON
+
+v_ayer = TODAY() - 1
+v_dias = VALUE(SUBSTRING(DATE(TODAY());1;2);0) - 1
+v_des = DATE(EOMONTH(v_ayer; -1) + 1)
+v_has = DATE(TODAY() - 1)
+v_hoy = DATE(TODAY())
+
+COMM
+Prueba
+v_des = "01/10/2021"
+v_has = "31/10/2021"
+v_hoy = "01/11/2021"
+
+v_Desde = SUBSTR(v_des;7;4)+SUBSTR(v_des;4;2)+SUBSTR(v_des;1;2)
+v_Hasta = SUBSTR(v_has;7;4)+SUBSTR(v_has;4;2)+SUBSTR(v_has;1;2)
+
+
+v_hoy_SAP = SUBSTR(v_hoy;7;4)+SUBSTR(v_hoy;4;2)+SUBSTR(v_hoy;1;2)
+
+Nom = SUBSTR(v_has;1;2)+SUBSTR(v_has;4;2)+SUBSTR(v_has;7;4)
+
+vDirectorio = "T:"
+vDirectorio = "\\srvfs01\STOCK_CURVA"
+
+vLineas = 0
+vLineas2 = 0
+
+SET SAFETY ON
+
+
+^REPORT   Vista_predeterminada                                                ProveedorRegular                                                  D,T.
+[SKIP] 0
+[TLINES] 2
+[RLINES] 1
+[LINE] 1
+EINA_INFNR           WIDTH 30 PICTURE ""
+[LINE] 1
+EINA_MATNR           WIDTH 30 PICTURE ""
+[LINE] 1
+EINA_LIFNR           WIDTH 30 PICTURE ""
+[LINE] 1
+EINA_RELIF           WIDTH 30 PICTURE ""
+[LINE] 1
+MARA_MATNR           WIDTH 19 PICTURE ""
+[LINE] 1
+MARA_MTART           WIDTH 19 PICTURE ""
+[LINE] 1
+LFA1_LIFNR           WIDTH 30 PICTURE ""
+[LINE] 1
+LFA1_NAME1           WIDTH 29 PICTURE ""
+^BATCH    S020_Importar                                                       
+[PARENT_FOLDER_ID] 1593534819
+SET SAFETY OFF
+
+COMM 
+IMPORT SAP PASSWORD 1 TO MKPF_MSEG SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>MKPF_MSEG.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>330</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>6</o><l>101</l><h>102</h></w><w><f>LGORT</f><o>0</o><l>0001</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc></js></q>
+OPEN MKPF_MSEG
+
+COMM MKPF_MSEG_EKKO_EKPO_MARA_LFA1
+
+IMPORT SAP PASSWORD 1 TO IngresosEgresosTMP SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>IngresosEgresosTMP.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>404</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>%v_Desde%</l><h>%v_Hasta%</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>0</o><l>101</l><h></h></w><w><f>BWART</f><o>0</o><l>102</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>EKPO</n><a>T00004</a><td>Posición del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>EBELP</f><f>MATNR</f><f>TXZ01</f><f>WERKS</f><f>MENGE</f><f>MTART</f></fs><wc></wc></t><t><n>EKKO</n><a>T00005</a><td>Cabecera del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>BUKRS</f><f>BSTYP</f><f>BSART</f><f>AEDAT</f><f>LIFNR</f></fs><wc></wc></t><t><n>MARA</n><a>T00007</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>BRAND_ID</f><f>MATKL</f><f>VOLUM</f></fs><wc></wc></t><t><n>LFA1</n><a>T00011</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELN</pf></pt><ct><ca>T00004</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELP</pf></pt><ct><ca>T00004</ca><cf>EBELP</cf></ct></jc><jc><pt><pa>T00004</pa><pf>EBELN</pf></pt><ct><ca>T00005</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00004</pa><pf>MATNR</pf></pt><ct><ca>T00007</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00005</pa><pf>LIFNR</pf></pt><ct><ca>T00011</ca><cf>LIFNR</cf></ct></jc></js></q>
+
+OPEN IngresosEgresosTMP
+
+COMMENT
+<w><f>LGORT</f><o>0</o><l>0001</l><h></h></w>
+
+
+COMM KLAH_SWOR
+
+IMPORT SAP PASSWORD 1 TO GruposArticulo SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>GruposArticulo.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>124</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>KLAH</n><a>T00001</a><td>Datos cabecera clase</td><tt>1</tt><fs><f>CLINT</f><f>KLART</f><f>CLASS</f><f>STATU</f></fs><wc><w><f>BISDT</f><o>0</o><l>99991231</l><h></h></w><w><f>KLART</f><o>0</o><l>026</l><h></h></w></wc></t><t><n>SWOR</n><a>T00002</a><td>Sistema de clasificación: palabras clave</td><tt>1</tt><fs><f>CLINT</f><f>KSCHL</f><f>KSCHG</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>CLINT</pf></pt><ct><ca>T00002</ca><cf>CLINT</cf></ct></jc></js></q>
+
+OPEN GruposArticulo
+
+COMM WRF_BRANDS_T
+
+IMPORT SAP PASSWORD 1 TO Marcas SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>Marcas.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>36</dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>WRF_BRANDS_T</n><a>T00001</a><td>Nombres de marcas</td><tt>1</tt><fs><f>BRAND_ID</f><f>BRAND_DESCR</f></fs><wc><w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js></js></q>
+
+COMM <w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w>
+
+OPEN Marcas
+
+COMM 
+-----------------------------------A073_KONP_COSTO
+Filtros
+En A073 KAPPL = V
+ <w><f>KAPPL</f><o>0</o><l>V</l><h></h></w>
+ <w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w>
+ <w><f>VKORG</f><o>0</o><l>1000</l><h></h></w>
+ <w><f>VTWEG</f><o>0</o><l>20</l><h></h></w>
+ <w><f>DATAB</f><o>3</o><l>%v_hoy_SAP%</l><h></h></w>
+ <w><f>DATBI</f><o>5</o><l>%v_hoy_SAP%</l><h></h></w>
+ KSCHL = ZKP0
+ VKORG = 1000
+ VTWEG = 20
+ DATAB <= '%v_hoy_SAP%'
+ DATBI >= '%v_hoy_SAP%' WHERE opo_fec_des <= '%v_hoy%' AND opo_fec_has >= '%v_hoy%'
+En KONP
+ KAPPL  = V
+ KSCHL = ZKP0
+ KBETR
+
+IMPORT SAP PASSWORD 1 TO CostoTmp SAP SOURCE "SAP AGENT" <q version="6.0"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>CostoTmp.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>52</dl><m>0</m><r>5000</r><ar>1</ar><e>500</e><ts><t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f><f>DATAB</f><f>DATBI</f></fs><wc><w><f>KAPPL</f><o>0</o><l>V</l><h></h></w><w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w><w><f>VKORG</f><o>0</o><l>1000</l><h></h></w><w><f>VTWEG</f><o>0</o><l>20</l><h></h></w><w><f>DATBI</f><o>5</o><l>%v_Desde%</l><h></h></w></wc></t><t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc></js></q>
+
+OPEN CostoTMP
+
+
+COMM 
+-----------------------------------A073_KONP_VENTA
+Filtros
+En A073 KAPPL = V
+ KSCHL = VKP0
+ VKORG = 1000
+ VTWEG = 20
+ DATAB <= '%v_hoy_SAP%'
+ DATBI >= '%v_hoy_SAP%' WHERE opo_fec_des <= '%v_hoy%' AND opo_fec_has >= '%v_hoy%'
+En KONP
+ KAPPL  = V
+ KSCHL = VKP0
+ KBETR
+
+IMPORT SAP PASSWORD 1 TO VentaTMP SAP SOURCE "SAP AGENT" <q version="6.0"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>VentaTMP.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>52</dl><m>0</m><r>5000</r><ar>1</ar><e>500</e><ts><t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f><f>DATAB</f><f>DATBI</f></fs><wc><w><f>KAPPL</f><o>0</o><l>V</l><h></h></w><w><f>KSCHL</f><o>0</o><l>VKP0</l><h></h></w><w><f>VKORG</f><o>0</o><l>1000</l><h></h></w><w><f>VTWEG</f><o>0</o><l>20</l><h></h></w><w><f>DATBI</f><o>5</o><l>%v_Desde%</l><h></h></w></wc></t><t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><fs><f>KBETR</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc></js></q>
+
+OPEN VentaTMP
+
+COMM
+MARA
+MAKT
+T001W,T001K
+
+
+COMM
+EINA
+MARA
+LFA1
+
+IMPORT SAP PASSWORD 1 TO ProveedorRegular SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo</d><u>%v_Usuario%</u><c>300</c><lg>ES</lg><cf>ProveedorRegular.fil</cf><sf></sf><jcount></jcount><jname></jname><dl>108</dl><m>0</m><ws>0</ws><jw>0</jw><r>500</r><ar>1</ar><e>500</e><ts><t><n>EINA</n><a>T00001</a><td>Registro info de compras: Datos generales</td><tt>1</tt><fs><f>INFNR</f><f>MATNR</f><f>LIFNR</f><f>RELIF</f></fs><wc><w><f>RELIF</f><o>0</o><l>X</l><h></h></w></wc></t><t><n>MARA</n><a>T00002</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f></fs><wc><w><f>MTART</f><o>0</o><l>ZPRO</l><h></h></w><w><f>MTART</f><o>0</o><l>ZBLA</l><h></h></w><w><f>MTART</f><o>0</o><l>ZPVV</l><h></h></w></wc></t><t><n>LFA1</n><a>T00003</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MATNR</pf></pt><ct><ca>T00002</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>LIFNR</pf></pt><ct><ca>T00003</ca><cf>LIFNR</cf></ct></jc></js></q>
+
+OPEN ProveedorRegular
+
+
+COMMENT
+ACCESSDATA32 CONNECTOR NAME "SAP" USER "macabrer" PASSWORD 1 TO "ProveedorRegular.FIL" CHARMAX 50 MEMOMAX 100 
+ SOURCE( server=10.4.100.31;client=300;language=ES;instancenumber=00;downloadpackagerecordcount=15000;variablestringlength=256;TemporaryWorkingDirectory=Default)
+ SQL_QUERY( 
+    SELECT
+        "EINA"."INFNR" AS "EINA_INFNR",
+        "EINA"."MATNR" AS "EINA_MATNR",
+        "EINA"."LIFNR" AS "EINA_LIFNR",
+        "EINA"."RELIF" AS "EINA_RELIF",
+        "MARA"."MATNR" AS "MARA_MATNR",
+        "MARA"."MTART" AS "MARA_MTART",
+        "LFA1"."LIFNR" AS "LFA1_LIFNR",
+        "LFA1"."NAME1" AS "LFA1_NAME1" 
+    FROM
+        ("EINA" "EINA" 
+    INNER JOIN
+        "MARA" "MARA" 
+            ON "EINA"."MATNR" = "MARA"."MATNR"
+        ) 
+INNER JOIN
+    "LFA1" "LFA1" 
+        ON "EINA"."LIFNR" = "LFA1"."LIFNR" 
+WHERE
+    (
+        "EINA"."RELIF" = 'X'
+    ) 
+    AND (
+        "MARA"."MTART" = 'ZPRO' 
+        OR "MARA"."MTART" = 'ZBLA' 
+        OR "MARA"."MTART" = 'ZPVV'
+    )
+ ) END_QUERY 
+OPEN ProveedorRegular
+END
+
+
+SET SAFETY ON
+^FORMAT   ProveedorRegular                                                    ProveedorRegular                                                  "" "ProveedorRegular.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[LASTVIEW] "Vista_predeterminada"
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>ProveedorRegular.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>108 </dl><m>0</m><ws>0</ws><jw>0</jw><r>500</r><ar>1</ar><e>500</e><ts><t><n>EINA</n><a>T00001</a><td>Registro info de compras: Datos generales</td><tt>1</tt><fs><f>INFNR</f><f>MATNR</f><f>LIFNR</f><f>RELIF</f></fs><wc><w><f>RELIF</f><o>0</o><l>X</l><h></h></w></wc></t><t><n>MARA</n><a>T00002</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f></fs><wc><w><f>MTART</f><o>0</o><l>ZPRO</l><h></h></w><w><f>MTART</f><o>0</o><l>ZBLA</l><h></h></w><w><f>MTART</f><o>0</o><l>ZPVV</l><h></h></w></wc></t><t><n>LFA1</n><a>T00003</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MATNR</pf></pt><ct><ca>T00002</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>LIFNR</pf></pt><ct><ca>T00003</ca><cf>LIFNR</cf></ct></jc></js></q>
+^REPORT   Vista_predeterminada                                                Datos                                                             D,T.
+[SKIP] 0
+[TLINES] 1
+[RLINES] 1
+[LINE] 1
+Usu_Legacy           WIDTH 11 PICTURE ""
+[LINE] 1
+Cl_Legacy            WIDTH 10 PICTURE ""
+[LINE] 1
+Usu_SAP              WIDTH 9 PICTURE ""
+[LINE] 1
+Cl_SAP               WIDTH 10 PICTURE ""
+[LINE] 1
+Usu_REPO             WIDTH 10 PICTURE ""
+[LINE] 1
+Cl_REPO              WIDTH 10 PICTURE ""
+[LINE] 1
+megatone             WIDTH 10 PICTURE ""
+[LINE] 1
+confina              WIDTH 8 PICTURE ""
+[LINE] 1
+base_megatone        WIDTH 14 PICTURE ""
+[LINE] 1
+base_corefin         WIDTH 12 PICTURE ""
+[LINE] 1
+clientes_megatone    WIDTH 16 PICTURE ""
+[LINE] 1
+clientes_corefin     WIDTH 14 PICTURE ""
+[LINE] 1
+proveedores          WIDTH 12 PICTURE ""
+[LINE] 1
+musimundo            WIDTH 11 PICTURE ""
+[LINE] 1
+clientes_unificado   WIDTH 15 PICTURE ""
+[LINE] 1
+interfaz_sap         WIDTH 11 PICTURE ""
+[LINE] 1
+reposar              WIDTH 8 PICTURE ""
+^FORMAT   Datos                                                               Datos                                                             "" "Datos.FIL" 0  
+[PARENT_FOLDER_ID] 1593534508
+[LASTVIEW] "Vista_predeterminada"
+[RETRIEVE] 0
+[REFRESH] SOURCE "EXCEL FILES" TABLE "Datos$" QUALIFIER "F:\Mis Documentos\AUDITORIA OPERATIVA\SCRIPT\Biblioteca AX\Datos.xls" TO "Datos.FIL" WIDTH 50 MAXIMUM 100 FIELDS "Usu_Legacy","Cl_Legacy","Usu_SAP","Cl_SAP","Usu_REPO","Cl_REPO","megatone","confina","base_megatone","base_corefin","clientes_megatone","clientes_corefin","proveedores","musimundo","clientes_unificado","interfaz_sap","reposar"
+^FORMAT   IngresosEgresosTMP                                                  IngresosEgresosTMP                                                "" "IngresosEgresosTMP.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>IngresosEgresosTMP.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>448 </dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>MKPF</n><a>T00001</a><td>Cabecera de doc.artículo</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>VGART</f><f>BLDAT</f><f>BUDAT</f><f>CPUDT</f><f>USNAM</f><f>XBLNR</f><f>LE_VBELN</f></fs><wc><w><f>CPUDT</f><o>6</o><l>20211201</l><h>20211208</h></w><w><f>VGART</f><o>0</o><l>WE</l><h></h></w></wc></t><t><n>MSEG</n><a>T00002</a><td>Segmento doc.material</td><tt>1</tt><fs><f>MBLNR</f><f>MJAHR</f><f>ZEILE</f><f>LINE_ID</f><f>BWART</f><f>MATNR</f><f>WERKS</f><f>LGORT</f><f>LIFNR</f><f>DMBTR</f><f>MENGE</f><f>EBELN</f><f>EBELP</f><f>GJAHR</f><f>BUKRS</f><f>BSTMG</f></fs><wc><w><f>BWART</f><o>0</o><l>101</l><h></h></w><w><f>BWART</f><o>0</o><l>102</l><h></h></w><w><f>WERKS</f><o>7</o><l>M*</l><h></h></w></wc></t><t><n>EKPO</n><a>T00004</a><td>Posición del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>EBELP</f><f>MATNR</f><f>TXZ01</f><f>WERKS</f><f>MENGE</f><f>MTART</f></fs><wc></wc></t><t><n>EKKO</n><a>T00005</a><td>Cabecera del documento de compras</td><tt>1</tt><fs><f>EBELN</f><f>BUKRS</f><f>BSTYP</f><f>BSART</f><f>AEDAT</f><f>LIFNR</f></fs><wc></wc></t><t><n>MARA</n><a>T00007</a><td>Datos generales artículo</td><tt>1</tt><fs><f>MATNR</f><f>MTART</f><f>BRAND_ID</f><f>MATKL</f><f>VOLUM</f></fs><wc></wc></t><t><n>LFA1</n><a>T00011</a><td>Maestro de proveedores (parte general)</td><tt>1</tt><fs><f>LIFNR</f><f>NAME1</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>MBLNR</pf></pt><ct><ca>T00002</ca><cf>MBLNR</cf></ct></jc><jc><pt><pa>T00001</pa><pf>MJAHR</pf></pt><ct><ca>T00002</ca><cf>MJAHR</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELN</pf></pt><ct><ca>T00004</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00002</pa><pf>EBELP</pf></pt><ct><ca>T00004</ca><cf>EBELP</cf></ct></jc><jc><pt><pa>T00004</pa><pf>EBELN</pf></pt><ct><ca>T00005</ca><cf>EBELN</cf></ct></jc><jc><pt><pa>T00004</pa><pf>MATNR</pf></pt><ct><ca>T00007</ca><cf>MATNR</cf></ct></jc><jc><pt><pa>T00005</pa><pf>LIFNR</pf></pt><ct><ca>T00011</ca><cf>LIFNR</cf></ct></jc></js></q>
+^FORMAT   GruposArticulo                                                      GruposArticulo                                                    "" "GruposArticulo.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>GruposArticulo.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>124 </dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>KLAH</n><a>T00001</a><td>Datos cabecera clase</td><tt>1</tt><fs><f>CLINT</f><f>KLART</f><f>CLASS</f><f>STATU</f></fs><wc><w><f>BISDT</f><o>0</o><l>99991231</l><h></h></w><w><f>KLART</f><o>0</o><l>026</l><h></h></w></wc></t><t><n>SWOR</n><a>T00002</a><td>Sistema de clasificación: palabras clave</td><tt>1</tt><fs><f>CLINT</f><f>KSCHL</f><f>KSCHG</f></fs><wc><w><f>SPRAS</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>CLINT</pf></pt><ct><ca>T00002</ca><cf>CLINT</cf></ct></jc></js></q>
+^FORMAT   Marcas                                                              Marcas                                                            "" "Marcas.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>Marcas.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>36  </dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>WRF_BRANDS_T</n><a>T00001</a><td>Nombres de marcas</td><tt>1</tt><fs><f>BRAND_ID</f><f>BRAND_DESCR</f></fs><wc><w><f>LANGUAGE</f><o>0</o><l>S</l><h></h></w></wc></t></ts><js></js></q>
+^FORMAT   CostoTmp                                                            CostoTmp                                                          "" "CostoTmp.fil" 0 ASCII 
+[PARENT_FOLDER_ID] 1593534508
+[RETRIEVE] 0
+[REFRESH] SAP SOURCE "SAP AGENT" <q version="7.5"><s>0</s><d>PRD_-_Productivo               </d><u>macabrer    </u><c>300</c><lg>ES</lg><cf>CostoTmp.fil</cf><sf>                                                                                                                                                                                                                                                               </sf><jcount>        </jcount><jname>                                </jname><dl>68  </dl><m>0</m><ws>0</ws><jw>0</jw><r>5000</r><ar>1</ar><e>500</e><ts><t><n>A073</n><a>T00001</a><td>Artículo por OrgVta/CanDistr</td><tt>0</tt><fs><f>KAPPL</f><f>KSCHL</f><f>MATNR</f><f>KNUMH</f><f>DATAB</f><f>DATBI</f></fs><wc><w><f>KAPPL</f><o>0</o><l>V</l><h></h></w><w><f>KSCHL</f><o>0</o><l>ZKP0</l><h></h></w><w><f>VKORG</f><o>0</o><l>1000</l><h></h></w><w><f>VTWEG</f><o>0</o><l>20</l><h></h></w><w><f>DATBI</f><o>5</o><l>20211201</l><h></h></w></wc></t><t><n>KONP</n><a>T00002</a><td>Condiciones (Posición)</td><tt>0</tt><fs><f>KBETR</f></fs><wc></wc></t></ts><js><jc><pt><pa>T00001</pa><pf>KAPPL</pf></pt><ct><ca>T00002</ca><cf>KAPPL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KSCHL</pf></pt><ct><ca>T00002</ca><cf>KSCHL</cf></ct></jc><jc><pt><pa>T00001</pa><pf>KNUMH</pf></pt><ct><ca>T00002</ca><cf>KNUMH</cf></ct></jc></js></q>
+^OPEN 
